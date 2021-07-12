@@ -1,20 +1,25 @@
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.Map.Entry;
 
-public class prebootcamp {
+public class PRE {
+	static DecimalFormat f = new DecimalFormat("##.0");
 	public static double calculateAndPrintTax(double Qty, double Price)
 	{
-		return Qty*Price*0.1;
+		return Double.parseDouble(f.format(Qty*Price*0.1));
+		 
 	}
     
 	public static double calculateAndPrintTaxImported(double Qty, double Price)
 	{
-		return Qty*Price*0.15;
+		return Double.parseDouble(f.format(Qty*Price*0.15));
+ 
 	}
 	
 	public static double onlyImported(double Qty, double Price)
 	{
-		return Qty*Price*0.05;
+		return Double.parseDouble(f.format(Qty*Price*0.05));
+ 
 	}
 	
     public static void main(String[] args) {
@@ -56,6 +61,7 @@ public class prebootcamp {
        double Tax = 0.00;
        double Total = 0.00;
        double Total1 = 0.00;
+     
        for (Entry<String, List<String>> entry : map1.entrySet()) {        
          if(entry.getValue().get(3).equals("N")) {
          if(entry.getValue().get(4).equals("Y")) {
@@ -90,12 +96,11 @@ public class prebootcamp {
     }
    
     } 
+   
+       System.out.println("Tax: "+  f.format(Tax));
+       System.out.println("Total: "+ f.format(Total1));
+    }
+}
  
-       System.out.println("Tax: "+ Math.round(Tax));
-       System.out.println("Total: "+ Math.round(Total1));
-        
-}
-}
 
- 
  
